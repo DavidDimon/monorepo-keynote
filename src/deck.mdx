@@ -1,0 +1,173 @@
+import { Head, themes, Appear } from 'mdx-deck'
+import { Content } from './components'
+import customTheme from './theme'
+
+export const theme = customTheme
+
+<Head>
+  <title>Core components</title>
+</Head>
+<Content />
+
+---
+
+## Por quê ter uma base de código unificada?
+
+<ul>
+  <Appear>
+    <li>Melhor reaproveitamento do código</li>
+    <li>Padronização do código</li>
+    <li>Códigos mais concisos e 'amadurecidos'</li>
+    <li>Facilidade de manutenção</li>
+    <li>Velocidade de criação de novos apps</li>
+  </Appear>
+</ul>
+
+---
+
+## Como podemos criar uma base de código?
+
+- Com uma estrutura de componentes, serviços, e temas com um monorepo!
+
+---
+
+## E por quê um criar um monorepo?
+
+- Os pacotes irão ficar unificados
+- Sem a necessidade de fazer múltiplas publicações para testar
+- Fácil comunicação entre os pacotes
+
+---
+
+## Técnologias usadas no monorepo
+
+<ul>
+  <Appear>
+    <li>Lerna</li>
+    <li>Yarn workspaces</li>
+    <li>Rollup</li>
+  </Appear>
+</ul>
+
+---
+
+## Lerna
+
+- Únifica o node_modules dos pacotes
+- Expoe comandos para a públicação dos pacotes
+- Gerencia quais pacotes vão ser publicados/buildados
+
+---
+
+## Por quê Yarn workspaces junto com o lerna?
+
+- Yarn workspaces traz ainda mais recursos para o lerna
+
+---
+
+## Rollup
+
+- O Roolup é responsável pelo build dos chunks dos pacotes!
+
+---
+
+## Pacotes
+
+<ul>
+  <Appear>
+    <li>Apps</li>
+    <li>Libs</li>
+  </Appear>
+</ul>
+
+---
+
+## Apps (não é publicado!)
+
+#### Possui um mobile e um app web para teste dos pacotes(libs)
+
+---
+
+## Libs
+
+<ul>
+  <Appear>
+    <li>Components</li>
+    <li>Services</li>
+    <li>Themes</li>
+    <li>_Babel(Custom babel configs)</li>
+    <li>_Rollup(Custom babel configs)</li>
+  </Appear>
+</ul>
+
+---
+
+## Components
+
+<ul>
+  <Appear>
+    <li>Mobile</li>
+    <li>Shared(styles)</li>
+    <li>Web</li>
+  </Appear>
+</ul>
+
+---
+
+## Atomic design
+
+#### Prós
+
+<ul>
+  <Appear>
+    <li>Separação dos componentes</li>
+    <li>Facilidade na estilização</li>
+    <li>Componentes mais inteligentes e genéricos</li>
+    <li>Maior facilidade nos testes</li>
+  </Appear>
+</ul>
+
+---
+
+## Atomic design
+
+#### Contras
+
+<ul>
+  <Appear>
+    <li>Necessita de uma maior abstração</li>
+    <li>Componentes mais complexos e genéricos</li>
+  </Appear>
+</ul>
+
+---
+
+## Shared styles
+
+- Compartilha somente o que é realmente necessário entre plataformas
+- Da uma maior liberdade para a criação dos componentes focados nas plataformas
+
+---
+
+## Services
+
+- Possui todas as funções e hooks compartilhados entre os projetos
+- Aqui podemos ter custom hooks para facilitar o desenvolvimento dos apps!
+
+---
+
+## Themes
+
+- Aqui podemos criar temas por projetos
+
+--- 
+
+### _Babel
+
+- Possui todas as configurações necessarias para o build compartilhada entre os pacotes
+
+---
+
+### _Rollup
+
+- Configurações necessarias para o build dos pacotes
